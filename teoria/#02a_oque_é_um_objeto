@@ -1,0 +1,52 @@
+O que é um Objeto?
+    "Coisa material ou abstrata que pode ser percebida pelos sentidos e descrita por meio das suas caracteristicas, compartamentos e estado atual"
+
+#Identificando um Objeto
+    #Ex Caneta:
+        Coisas que eu tenho
+            Classe caneta
+                modelo: caractere
+                cor: caractere
+                ponta: real
+                carga: inteiro
+                tampada: logico
+        Coisas que eu faço
+            Metodo rabiscar()
+                se (tampada) entao
+                    escreva ("Erro")
+                senao
+                    escreva ("Rabisco")
+                fimse
+            fimMetodo
+            Metodo tampar()
+                tampada = verdadeiro
+            fimMetodo
+        Como eu estou agora?
+            Destampada
+            Azul
+            90% de carga
+            ...
+
+#Instanciar
+    Significa gerar um objeto a partir de uma Classe
+    #Exemplo
+        c1 = nova Caneta
+        ci.cor = "Azul"
+        c1.ponta = 0.5
+        c1.tampada = falso
+        c1.rabiscar()
+
+        c2 = nova Caneta
+        c2.cor = "Vermelha"
+        c2.ponta = 0.5
+        c2.tampada = falso
+        c2.tampar()
+
+#O que seria uma Classe?
+    Define os atributos e métodos comuns que seão compartilhados por um objeto.
+
+#O que seria um Objeto?
+    Um objeto é uma instância de uma classe.
+
+O que é Abstração
+    É selecionar os atributos do objeto o que vai interessa a você.

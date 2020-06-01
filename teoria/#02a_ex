@@ -1,0 +1,85 @@
+Escolha 2 objetos e classifique eles.
+
+#resposta objeto fisicos
+    classe controle_remoto
+        modelo: "Silver" #caractere
+        cor: "Preto" #caractere
+        peso: 0.100 #real
+        comprimento: 0.16 #real
+        largura: 8 #real
+        pilha: true #logico
+        
+        metodo funciona()
+            se (pilha) entao
+                escreva = "funciona"
+            senao
+                escreva = "não funciona"
+            fimse
+        fimmetodo funciona
+        metodo bateria()
+            se (pilha) entao
+                escreva = "tudo ok"
+            senao
+                escreva = "sem bateria"
+            fimse
+        fimmetodo bateria
+    fimclassse controle_remoto
+
+    classe tv
+        modelo: "Silver" #caractere
+        tipo: "Smart Tv" #caractere
+        cor: "Preta" #caractere
+        polegada: 42 #inteiro
+        sistema: "Android" #caractere
+        peso: 10.5 #real
+        ligada: true #logico
+
+        metodo ligar()
+            se (tomada) entao
+                escreva "tudo ok"
+            senao
+                escreva "ligue tomada"
+            fimse
+        fimmetodo ligar
+        metodo controle()
+            se (controle) entao
+                escreva "ligar tv"
+            senao
+                escreva "por pilha"
+            fimse
+        fimmetodo controle
+    fimclasse tv
+
+#resposta objetos conceituais
+    classe trabalhar
+        dia: "seg a sexta" #caractere
+        local: "fábrica" #caractere
+        horaI: 08:00 #real
+        sairF: 16:25 #real
+        função: "operador" #caractere
+        saúde: true #logico
+        
+        metodo saudavel()
+            se (saude) entao
+                escreva "Vai trabalhar"
+            senao
+                escreva "vai pro médico"
+            fimse
+        fimmetodo saudavel
+    fimclasse trabalhar
+
+    classe estudar
+        dia: "todo dia" #caractere
+        local: "casa" #caractere
+        hora: 03:00 #real
+        curso: "web developer" #caractere
+        cansado: false #logico
+
+        metodo saude()
+            se (cansado) entao
+                escreva "estudar danado"
+            senao
+                escreva "descansar"
+            fimse
+        fimmetodo saude
+    fimclasse estudar
