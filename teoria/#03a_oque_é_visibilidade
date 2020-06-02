@@ -1,0 +1,54 @@
+O que é visibilidade em um objeto?
+
+    LMU/UML = Linguagem de Modelagem Unificada
+    
+    #Diagram de Classes
+        ex:
+            Caneta // Classe começa com letra maiuscula
+                modelo
+                cor
+                ponta       // Atributos sempre com letras minusculas
+                carga
+                tampada
+
+                escrever()
+                rabiscar()
+                pintar()    //  Metodos sempre letra minusculas e possuindo '()'
+                tampar()
+                destampar()
+    
+    #Modificadores de Visibilidade
+        Indicam o nivel de acesso aos compnentes internos de uma classe(atributos e metodos)
+        
+        + publico
+            a classe atual e todas as outras classes pode ter acesso a ela
+        - privada
+            somente a classe atual vai ter acesso
+        # protegido
+            da acesso a classe atual e todas suas sub-classes
+
+    #Diagrama de Classes UML definido
+        ex:
+            Classe Caneta
+                publico modelo: caractere
+                publico cor: caractere
+                privado ponta: real       
+                protegido carga: inteiro
+                protegido tampada: logico
+
+                publico escrever()
+                
+                fimMetodo
+                publico rabiscar()
+
+                fimMetodo
+            FimClasse
+
+            c1 = nova Caneta
+            c1.modelo = "Bic cristal"
+            c1.cor = "Azul"
+            c1.ponta = 0.5 // nao vai funcionar pq é privado
+            c1.carga = 80 // nao vai funcionar pq é protegido
+            c1.tampada = falso // não vai funcionar pq é protegido
+            c1.escrever()
+            c1.rabiscar()

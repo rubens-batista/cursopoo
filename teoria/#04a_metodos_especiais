@@ -1,0 +1,71 @@
+Métodos Especiais
+    #Método Acessores / Getters
+        ex:
+            e = nova Estante
+            t = e.totDoc
+        #Mais seguro
+            e = nova Estante
+            t = e.getTotDoc()
+    
+    #Método Modificadores / Setters
+        ex:
+            e = nova Estante
+            etotDoc = e.totDoc + 1
+        #Mais seguro
+            e = nova Estante
+            e.setTotDoc(doc)
+    
+    ex:
+        Classe Caneta
+            publico modelo: caractere
+            privado ponta: real
+            
+            publico Metodo getModelo()
+                retorne modelo
+            FimMetodo
+            publico Metodo setModelo(m: caractere)
+                modelo = m
+            FimMetodo
+
+            privado Metodo getPonta()
+                retorne ponta
+            FimMetodo
+            privado Metodo setPonta(p: real)
+                ponta = p
+            FimMetodo
+        FimClasse
+        #SET
+        c1 = nova Caneta
+        c1.setModelo("Bic Cristal")
+        c1.setPonta(0.5)
+        #GET
+        Escreva (c1.getModelo())
+        Escreva (c1.getPonta())
+
+    #Método construtor / Construct
+        ex01:
+            Classe Caneta
+                Metodo construtor()
+                    tampar()
+                    cor = "Azul"
+                fimMetodo
+            FimClasse
+
+            c1 = nova Caneta // vai está tampada e ser azul automático
+
+        ex02:
+            Clase Caneta
+                Metodo construtor(
+                    m: caractere,
+                    c: caractere,
+                    p: real
+                )
+                setModelo(m)
+                setCor(c)
+                setPonta(p)
+                tampar()
+
+                fimMetodo
+            FimClasse
+
+            c1 = nova Caneta("Bic", "Azul", 0.5)

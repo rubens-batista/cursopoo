@@ -1,12 +1,12 @@
 <?php
     class caneta{
-        var $modelo;
-        var $cor;
-        var $ponta;
-        var $carga;
-        var $tampada;
+        public $modelo;
+        public $cor;
+        private $ponta;
+        protected $carga;
+        protected $tampada;
 
-        function rabiscar(){
+        public function rabiscar(){
             if($this->tampada == true){
                 echo "<p>ERROR! Não posso rabiscar....</p>"; 
             }else{
@@ -14,11 +14,11 @@
             }
         }
 
-        function tampar(){
+        public function tampar(){
             $this->tampada = true;
         }
 
-        function destampar(){
+        public function destampar(){
             $this->tampada = false;
         }
     }    
