@@ -1,0 +1,15 @@
+#Conta Banco
+
+    classe ContaBanco
+        + numConta
+        # tipo
+        - dono
+        - saldo
+        - status
+
+        + abrirConta()
+        + fecharConta()
+        + depositar()
+        + sacar()
+        + pagarMensal()
+    fimclasse
