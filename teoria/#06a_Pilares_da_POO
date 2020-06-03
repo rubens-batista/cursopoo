@@ -1,0 +1,120 @@
+Pilares do POO
+    #Modelo de 3 Pilares
+        Abstração # Tem bibliografia que considera Abstração um pilar
+        Encapsulamento
+            Alem de proteção, Mantem um padrão.
+            "Ocultar partes independentes da implementação, permitindo construir partes invisíveis ao mundo exterior."
+
+            #Interface
+                Lista de serviços fornecidos por um componente. É o contato com o mundo exterior, que define o  que pode ser feito com um objeto dessa classe.
+            #Aviso:
+                Encapsular não é obrigatório, mas é uma boa prática para produzir Classes mais eficientes.
+            #03 Vantagens de se usar Encapsulamento
+                1- Tornar mudanças invisíveis
+                2- Facilitar reutilização do código
+                3- Reduzir os efeitos colaterais
+
+            Ex:
+
+                interface Controlador
+                    #Métodos Abstratos // Métodos abstratos, previsto, mas não implementado
+                    public abstrato Metodo ligar()
+                    public abstrato Metodo desligar()
+                    public abstrato Metodo abrirMenu()
+                    public abstrato Metodo fecharMenu()
+                    public abstrato Metodo maisVolume()
+                    public abstrato Metodo menosVolume()
+                    public abstrato Metodo ligarMudo()
+                    public abstrato Metodo desligarMudo()
+                    public abstrato Metodo play()
+                    public abstrato Metodo pause()
+                FimInterface
+                
+                #------
+                
+                classe ControleRemoto implementa Controlador
+                
+                    #Atributos
+                    volume
+                    ligado
+                    tocando
+                    
+                    #Métodos
+
+                    public Metodo ligar()
+                        setLigado(true)
+                    fimMetodo
+                    public Metodo desligar()
+                        setLigado(false)
+                    fimMetodo
+                    public Metodo abrirMenu()
+                        escreva(getLigado())
+                        escreva(getVolume())
+                        para i = 0 ate getVolume() passo 10 faca
+                            escreva("|")
+                        fimPara
+                        escreva(getTocando())
+                    fimMetodo
+                    public Metodo fecharMenu()
+                        escreva("Fechando Menu")
+                    fimMetodo
+                    public Metodo maisVolume()
+                        se (getLigado()) entao
+                            setVolume(getVolume() + 1)
+                        fimSe
+                    fimMetodo
+                    public Metodo menosVolume()
+                        se (getLigado()) entao
+                            setVolume(getVolume() - 1)
+                        fimSe
+                    fimMetodo
+                    public Metodo LigarMudo()
+                        se (getLigado() e getVolume() > 0) entao
+                            setVolume(0)
+                        fimSe
+                    fimMetodo
+                    public Metodo desligarMudo()
+                        se (getLigado() e getVolume() = 0) entao
+                            setVolume(50)
+                        fimSe
+                    fimMetodo
+                    public Metodo play()
+                        se (getLigado() e nao getTocando()) entao
+                            setTocando(true)
+                        fimSe
+                    fimMetodo
+                    public Metodo pause()
+                        se (getLigado() e getTocando()) entao
+                            setTocando(false)
+                        fimSe
+                    fimMetodo
+
+                    #Métodos Especiais
+                    public Metodo Construtor(
+                        volume = 50
+                        ligado = falso
+                        tocando = falso
+                    )
+                    privado Metodo getVolume()
+                        retorne volume
+                    fimMetodo
+                    privado Metodo getLigado()
+                        retorne ligado
+                    fimMetodo
+                    privado Metodo getTocando()
+                        retorne tocando
+                    fimMetodo
+                    privado Metodo setVolume(v: logico)
+                    volume = v
+                    fimMetodo
+                    privado Metodo setLigado(l: logico)
+                    ligado = v
+                    fimMetodo
+                    privado Metodo setTocando(t: logico)
+                    tocando = v
+                    fimMetodo
+
+                fimclasse
+        Herença
+
+        Polimorfismo
