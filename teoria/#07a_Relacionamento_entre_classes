@@ -1,0 +1,98 @@
+Relacionamento entre classes
+    ex:
+        l:vetor[0..5]
+        l:[0] = novo Lutador(
+            "pretty boy",
+            "frança",
+            31, 1.75, 68.9,
+            11, 3, 1
+        )
+        l:[1] = novo Lutador(
+            "putscript",
+            "brasil",
+            29, 1.68, 68.9,
+            11, 3, 1
+        )
+        l:[2] = novo Lutador()
+        l:[3] = novo Lutador()
+        
+
+        classe Lutador
+            #Atributos
+                private nome
+                private nacionalidade
+                private idade
+                private altura
+                private peso
+                private categoria
+                private vitorias
+                private derrotas
+                private empates
+            #Métodos
+                public apresentar(){
+                    escreva "lutador", getNome()
+                    escreva "Origem", getNacionalidade()
+                    escreva getIdade(), " anos"
+                    escreva getAltura(), " m de altura"
+                    escreva "Pesando", getPeso(), "Kg"
+                    escreva "Ganhou", getVitorias()
+                    escreva "Perdeu", getDerrotas()
+                    escreva "Empatou", getEmpates()
+                }
+                public status(){
+                    escreva getNome()
+                    escreva "é um peso", getCategoria()
+                    escreva getVitorias(), "vitorias"
+                    escreva getDerrotas(), "derrotas"
+                    escreva getEmpates(), "empates"
+                }
+                public function ganharLuta(){
+                    setVitoria(getVitorias() + 1)
+                }
+                public function perderLuta(){
+                    setDerrotas(getDerrotas() + 1)
+                }
+                public function empartarLuta(){
+                    setEmpatar(getEmpatar() + 1)
+                }
+            #Métodos Especiais
+                public function __construct(
+                    no, na, id, al, pe, vi, de, em
+                ){
+                    nome = no
+                    nacionalidade = na
+                    idade = id
+                    altura = al
+                    setPeso(pe)
+                    vitorias = vi
+                    derrotas = de
+                    empates = em
+                }
+                public function getNome(){
+                    retorne nome
+                }
+                public function setNome(no){
+                    nome = no
+                }
+                public function getPeso(){
+                    retorne peso
+                }
+                public function setPeso(pe){
+                    peso = pe
+                    setCategoria()
+                }
+                public function setCategoria(){
+                    se(peso<52.2)entao
+                        categoria = "invalido"
+                    senao se(peso<=70.3)entao
+                        categoria = "leve"
+                    senao se(peso<=83.9)entao
+                        categoria = "medio"
+                    senao se(peso<=120.2)entao
+                        categoria = "pesado"
+                    senao
+                        categoria = "invalido"
+                    fimse
+                }
+        fimClasse
+
