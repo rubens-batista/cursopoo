@@ -1,0 +1,27 @@
+Exercício Prático POO em PHP
+    classe Pessoa
+        - nome
+        - idade
+        - sexo
+
+        + fazerAniver()
+    fimclasse
+
+    classe Livro
+        - titulo
+        - autor
+        - totPaginas
+        - pagAtual
+        - aberto
+        - leitor
+
+        + detalhes()
+    fimclasse
+
+    <<interface>>
+        Publicação
+            + abrir()
+            + fechar()
+            + folhear()
+            + avançarPag()
+            + voltarPag()
