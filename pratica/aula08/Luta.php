@@ -62,16 +62,16 @@
                     return $thir->aprovada;
                 }
             //Sets
-                public function setDesafiado(){
+                public function setDesafiado($desafiado){
                     $this->desafiado = $desafiado;
                 }
-                public function setDesafiante(){
+                public function setDesafiante($desafiante){
                     $this->desafiente = $desafiante;
                 }
-                public function setRounds(){
+                public function setRounds($rounds){
                     $this->rounds = $rounds;
                 }
-                public function setAprovada(){
+                public function setAprovada($aprovada){
                     $this->aprovada = $aprovada;
                 }
     }
