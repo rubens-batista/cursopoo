@@ -1,0 +1,66 @@
+Pilares do POO
+    #Modelo de 3 Pilares
+        Herança
+            'Permite basear uma nova classe na definição de uma outra classe previamente existente'
+            'A herança será apricada tanto para as caracteristicas quanto para os comportamentos'
+
+        ex:
+            classe Pessoa{ #Classe Mae/Progenitora/Superclasse
+                #atributos
+                    - nome
+                    - idade
+                    - sexo
+                #metodos
+                    + metodo fazerAniv()
+                #metodos especiais
+                    + metodo getNome(){}
+                    + metodo setNome(){}
+            }
+
+            classe Aluno estende Pessoa{ // Classe Filha/Subclasse
+                #atributos
+                    - matr
+                    - curso
+                #metodos
+                    + cancelarMatr(){}
+                #metodos especiais 
+                    + metodo getMatr(){}
+                    + metodo setMatr(){}
+            }
+            classe Professor estende Pessoa{
+                #atributos
+                    - especialidade
+                    - salario
+                #metodos
+                    + receberAum(){}
+                #metodos especiais 
+                    + metodo getEspecialidade(){}
+                    + metodo setEspecialidade(){}
+            }
+            classe Funcionario estende Pessoa{
+                #atributos
+                    - setor
+                    - trabalhando
+                #metodos
+                    + mudarTrabalho(){}
+                #metodos especiais 
+                    + metodo getSetor(){}
+                    + metodo setSetor(){}
+            }
+
+            #programa principal
+            p1 = new Pessoa()
+            p2 = new Aluno()
+            p3 = new Professor()
+            p4 = new Funcionario()
+
+            p1.setNome("Pedro")
+            p2.setNome("Maria")
+            p3.setNome("Claudio")
+            p4.setNome("Fabiana")
+
+            p2.setCurso("Informatica")
+            p3.setSalario(2500.75)
+            p4.setSetor("estoque")
+            
+            p1.receberAum(550.20) // Errado, não tem esse metodo nele
