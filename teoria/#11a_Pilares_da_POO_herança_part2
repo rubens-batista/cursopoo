@@ -1,0 +1,48 @@
+Pilares do POO
+    #Modelo de 3 Pilares
+        Herança
+            'Permite basear uma nova classe na definição de uma outra classe previamente existente'
+            'A herança será apricada tanto para as caracteristicas quanto para os comportamentos'
+    
+    #Tipos de herança
+        Herança de implementação
+        Herança para diferença
+
+    Classe Abstrata
+        'Não pode ser instanciada. Só pode servir como progenitora'
+    Método Abstrato
+        'Declarado, mas não implementado na progenitora'
+    Classe Final
+        'Não pode ser herdada por outra classe. Obrigatoriamente folha'
+    Método Final
+        'Não pode ser sobrescrito pelas suas sub-classes. Obrigatoriamente herdado'
+
+    
+    abstrata classe Pessoa{
+        privado nome
+        privado idade
+        privado sexo
+
+        publico metodo final fazerAniv(){}
+    }
+    classe Visitante estende Pessoa{ // Herança de implementação
+
+    }
+    classe Aluno estende Pessoa{ // Herança para diferença
+        privado matricula
+        privado curso
+        publico metodo PagarMensalidade()
+    }
+    classe Bolsista estende Aluno{
+        privado bolsa
+        
+        publico metodo renovarBolsa(){}
+        @Sobrepor
+        publico metodo PagarMensalidade(){}
+    }
+
+    //Programa principal
+    p1 = novo Pessoa() // Não vai funcionar
+    v1 = novo Visitante()
+    a1 = novo Aluno()
+    b1 = novo Bolsista()
