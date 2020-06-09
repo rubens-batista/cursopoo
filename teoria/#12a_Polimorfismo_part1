@@ -1,0 +1,215 @@
+Conceito de Polimorfismo
+    Poli = muitas
+    Morfo = formas
+
+    'Permite que um mesmo nome represente vários comportamentos diferentes.'
+
+    #Assinatura do Método
+        Quantidade e os tipos dos parâmetros
+            ex Assinatura iguais:
+                public function calcMedia(n1, n2)
+
+                public function calcMedia(v1, v2)
+
+            ex Assinatura diferente
+                public function calcMedia(bim, n1, n2)
+
+                public function metodo calcMedia(n1, n2, n3, n4)
+
+                public function metodo calcMedia(medMin, medMax, sit, bim)
+
+    #Tipos de Polimorfismo
+        1- Sobreposição
+            'Acontece quando substituimos um metodo de uma superclasse na sua subclasse, usando a mesma assinatura'
+        2-Sobrecarga
+
+    Ex Sobreposição
+        abstract class Animal{
+            protect peso
+            protect idade
+            protect membros
+
+            abstract public function locomover()
+            abstract public function alimentar()
+            abstract public function emitirSom()
+        }
+        class Mamifero extends Animal{
+            private corPelo
+
+            @Sobrepor
+            public function locomover(){
+                escreva "correndo";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "mamando";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "som de Mamifero";
+            }
+        }
+        class Raptil extends Animal{
+            private corEscama
+
+            @Sobrepor
+            public function locomover(){
+                escreva "Rastejando";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "Comendo vegetais";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "som de Réptil";
+            }
+        }
+        class Peixe extends Animal{
+            private corEscama
+
+            @Sobrepor
+            public function locomover(){
+                escreva "Nadando";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "Comendo substâncias";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "Peixe não faz som";
+            }
+            public function soltarBolha(){
+                escreva "Soltou uma bolha";
+            }
+        }
+        class Ave extends Animal{
+            private corPena
+
+            @Sobrepor
+            public function locomover(){
+                escreva "Voando";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "Comendo frutas";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "Som de ave";
+            }
+            public function fazerNinho(){
+                escreva "Construiu um ninho";
+            }
+        }
+        class Canguru extends Mamifero{
+            @Sobrepor
+            public function locomover(){
+                escreva "Saltando";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "Comendo frutas";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "Som de Canguru";
+            }
+            public function usarBolsa(){
+                escreva "Usou Bolsa";
+            }
+        }
+        class Cachorro extends Mamifero{
+            @Sobrepor
+            public function locomover(){
+                escreva "Correndo";
+            }
+            @Sobrepor
+            public function alimentar(){
+                escreva "Comendo ração";
+            }
+            @Sobrepor
+            public function emitirSom(){
+                escreva "Latiu";
+            }
+            public function enterrarOsso(){
+                escreva "Enterrando osso";
+            }
+            public function abanarRabo(){
+                escreva "Abanando o Rabo";
+            }
+        }
+        class Cobra extends Reptil{
+            [...]
+        }
+        class Tartatura extends Reptil{
+            [...]
+            public function locomover(){
+                escreva "Andando beeeeem devagar";
+            }
+        }
+        class Goldfish extends Peixe{
+            [...]
+        }
+        class Arara extends Ave{
+            [...]
+        }
+
+        #Principal 1
+        m = novo Mamifero()
+        r = novo Reptil()
+        p = novo Peixe()
+        a = novo Ave()
+
+        m.setPeso(85.3)
+        m.setIdade(2)
+        m.setMembros(4)
+        m.locomover() // Correndo
+        m.alimentar() // Mamando
+        m.emitirSom() // Som de Mamifero
+        
+        p.setPeso(0.35)
+        p.setIdade(1)
+        p.setMembros(0)
+        p.locomover() // Nadando
+        p.alimentar() // comendo substâncias
+        p.emitirSom() // Peixe nao faz som
+        p.soltarBolha()
+
+        a.setPeso(0.89)
+        a.setIdade(2)
+        a.setMembros(2)
+        a.locomover() // Voando
+        a.alimentar() // comendo frutas
+        a.emitirSom() // Som de ave
+        a.fazerNinho() 
+
+        #Principal 2
+        m = novo Mamifero()
+        c = novo Canguru()
+        k = novo Cachorro()
+
+        m.setPeso(5.70)
+        m.setIdade(8)
+        m.setMembros(4)
+        m.locomover() // Correndo
+        m.alimentar() // Mamando
+        m.emitirSom() // Som de Mamifero
+
+        c.setPeso(55.30)
+        c.setIdade(3)
+        c.setMembros(4)
+        c.locomover() // Saltando
+        c.alimentar() // Mamando
+        c.emitirSom() // Som de Mamifero
+        c.usarBolsa()
+
+        k.setPeso(3.94)
+        k.setIdade(5)
+        k.setMembros(4)
+        k.locomover() // Correndo
+        k.alimentar() // Mamando
+        k.emitirSom() // Auau
+        k.enterrarOsso()
+        k.abanarRabo()
