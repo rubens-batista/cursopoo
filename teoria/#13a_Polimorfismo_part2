@@ -1,0 +1,64 @@
+Conceito de Polimorfismo
+    Poli = muitas
+    Morfo = formas
+
+    'Permite que um mesmo nome represente vários comportamentos diferentes.'
+
+    #Tipos de Polimorfismo
+        1- Sobreposição
+            'Acontece quando substituimos um metodo de uma superclasse na sua subclasse, usando a mesma assinatura'
+            'Mesma Assinaturas, classes diferentes'
+        2-Sobrecarga
+            'Assinaturas diferentes, mesma classe'
+
+            ex:
+                classe Cachorro estende lobo{
+                    public function reagir(frase){
+                        se(frase="toma comida" ou frase ="olá"){
+                            escreva "abanar e latir"
+                        }senao{
+                            escreva "rosnar"
+                        }
+                    }
+                    public function reagir(hora, min){
+                        se(hora<12){
+                            escreva "abanar"
+                        }senaose(hora>=18){
+                            escreva "ignorar"
+                        }senao{
+                            escreva "abanar e latir"
+                        }
+                    }
+                    public function reagir(dono){
+                        se(dono = true){
+                            escreva "abanar"
+                        }senao{rosnar e latir}
+                    }
+                    public function reagir(idade, peso){
+                        se(idade<5){
+                            se(peso<10){
+                                escreva "abanar"
+                            }senao{
+                                escreva "latir"
+                            }
+                        }senao{
+                            se(peso<10){
+                                escreva "rosnar"
+                            }senao{
+                                escreva "ignorar"
+                            }
+                        }
+                    }
+                }
+                #programa principal
+                c = novo Cachorro()
+                
+                c.reagir("Ola") // abanar e latir
+                c.reagir("vai apanha") // rosnar
+                c.reagir(11, 45) // abanar
+                c.reagir(21, 00) // ignorar
+                c.reagir(true) // abanar
+                c.reagir(false) // rosnar e latir
+                c.reagir(2, 12.5) // latir
+                c.reagir(17, 4.5) // rosnar
+    
